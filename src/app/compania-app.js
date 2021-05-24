@@ -55,9 +55,10 @@ const setForm1 = () => {
     const wrapper = document.getElementById('wrapper-options-compania');
     const el = document.getElementById('formulario-bancos');
     const el2 = document.getElementById('formulario-terceros');
+    const el3 = document.getElementById('formulario-datos');
     if(el)wrapper.removeChild(el);
     if(el2)wrapper.removeChild(el2);
-    wrapper.appendChild(createForm1());
+    if(!el3)wrapper.appendChild(createForm1());
 };
 
 const createForm1 = () => {
@@ -72,9 +73,10 @@ const setForm2 = () => {
     const wrapper = document.getElementById('wrapper-options-compania');
     const el = document.getElementById('formulario-datos');
     const el2 = document.getElementById('formulario-terceros');
+    const el3 = document.getElementById('formulario-bancos');
     if(el)wrapper.removeChild(el);
     if(el2)wrapper.removeChild(el2);
-    wrapper.appendChild(createForm2());
+    if(!el3)wrapper.appendChild(createForm2());
 };
 
 const createForm2 = () => {
@@ -89,9 +91,10 @@ const setForm3 = () => {
     const wrapper = document.getElementById('wrapper-options-compania');
     const el = document.getElementById('formulario-datos');
     const el2 = document.getElementById('formulario-bancos');
+    const el3 = document.getElementById('formulario-terceros');
     if(el)wrapper.removeChild(el);
     if(el2)wrapper.removeChild(el2);
-    wrapper.appendChild(createForm3());
+    if(!el3)wrapper.appendChild(createForm3());
 };
 
 const createForm3 = () => {
