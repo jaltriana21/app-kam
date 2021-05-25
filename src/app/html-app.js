@@ -2,6 +2,7 @@ import {createCompania} from './compania-app'
 import main from '../html/html-main.html';
 import navegation from '../html/html-nav.html';
 
+
 const init = (container) => {
     createWrapper(container);
     showSections();
@@ -81,13 +82,13 @@ const addItems = (navList) => {
 };
 
 
-
 const setItem1 = ()=>{
     const navItem = document.createElement('li');
     navItem.classList = 'nav__item';
     navItem.appendChild(setLink1());
     return navItem;
 };
+
 
 const setItem2 = ()=>{
     const navItem = document.createElement('li');
@@ -104,12 +105,14 @@ const setItem3 = ()=>{
     return navItem;
 };
 
+
 const setItem4 = ()=>{
     const navItem = document.createElement('li');
     navItem.classList = 'nav__item';
     navItem.appendChild(setLink4());
     return navItem;
 };
+
 
 const setItem5 = ()=>{
     const navItem = document.createElement('li');
@@ -118,12 +121,14 @@ const setItem5 = ()=>{
     return navItem;
 };
 
+
 const setItem6 = ()=>{
     const navItem = document.createElement('li');
     navItem.classList = 'nav__item';
     navItem.appendChild(setLink6());
     return navItem;
 };
+
 
 const setItem7 = ()=>{
     const navItem = document.createElement('li');
@@ -139,7 +144,6 @@ const setItem8 = ()=>{
     navItem.appendChild(setLink8());
     return navItem;
 };
-
 
 
 const setLink1 = ()=>{
@@ -158,6 +162,7 @@ const setImgNav = () => {
     return wrapper;
 };
 
+
 const setLink2 = ()=>{
     const navLink = document.createElement('a');
     navLink.classList = 'nav__link';
@@ -166,6 +171,7 @@ const setLink2 = ()=>{
     navLink.addEventListener('click', setSection);
     return navLink;
 }    
+
 
 const setLink3 = ()=>{
     const navLink = document.createElement('a');
@@ -206,6 +212,7 @@ const setLink6 = ()=>{
     return navLink;
 } 
 
+
 const setLink7 = ()=>{
     const navLink = document.createElement('a');
     navLink.classList = 'nav__link';
@@ -214,6 +221,7 @@ const setLink7 = ()=>{
     navLink.addEventListener('click', setSection);
     return navLink;
 } 
+
 
 const setLink8 = ()=>{
     const navLink = document.createElement('a');
@@ -258,7 +266,6 @@ const setSection = (ev) => {
     const selectSection = document.getElementById(`wrapper-${id}`);
     selectSection.classList.add('activo');
 };
-
 
 
 export{init};
