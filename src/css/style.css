@@ -145,3 +145,80 @@ img{
     color: #fff;
 }
 
+/******terceros**************/
+#formulario-terceros{    
+    margin: 10px;
+}
+
+#tercero-create{       
+    background-color: #F77F00;    
+    color: #fff;    
+    cursor: pointer;        
+    border: 1px solid #F77F00;
+    padding: 1rem 1rem;      
+    font-size:medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+}
+
+.tercero-table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 1px solid #828c51;       
+    color: #828c51; 
+    margin: 10px;
+}
+
+th{
+    border: 1px solid #828c51; 
+}
+
+#tercero-save{
+    display: inline;
+    background-color: #F77F00;    
+    color: #fff;    
+    cursor: pointer;        
+    border: 1px solid #F77F00;
+    padding: 1rem 1rem; 
+    margin: 10px;     
+    font-size:medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+}
+
+.tercero-input{
+    width:100%;
+    height: 30px;
+    margin: 5px;	
+	border: 1px solid #828c51;			
+	display:inline-block;
+    font-size:medium;
+    color: #828c51;
+}
+
+.tercero-select{
+    margin: 5px;	
+    height: 30px;
+	border: 1px solid #828c51;			
+	display:inline-block;
+    font-size:medium;
+    color: #828c51;
+}
+
+#tercero-dv{
+    width:50px;
+}
+
+#tercero-nit{
+    width:180px;
+}
+
+#tercero-sigla{
+    width:120px;
+}
+
+.tercero-hr{
+    width:100%;
+    background-color: #104F55;
+    height:4px;
+}

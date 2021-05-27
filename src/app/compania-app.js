@@ -1,3 +1,5 @@
+import {createTerceros} from './terceros-app';
+
 const createCompania = ()=>{
     const wrapper = document.getElementById('wrapper-compania');
     wrapper.appendChild(setContentOption());
@@ -100,7 +102,9 @@ const setForm3 = () => {
 const createForm3 = () => {
     const form = document.createElement('div');
     form.id = 'formulario-terceros';
-    form.innerText = 'aque va formulario terceros';
+    
+    createTerceros(form);
+
     return form;
 };
 

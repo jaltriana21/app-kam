@@ -1,4 +1,4 @@
-import {createCompania} from './compania-app'
+import {createCompania} from './compania-app';
 import main from '../html/html-main.html';
 import navegation from '../html/html-nav.html';
 
