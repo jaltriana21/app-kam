@@ -21,35 +21,18 @@ const contentOption = () => {
     const wrapper = document.createElement('div');
     wrapper.classList = 'content__btn__compania';
     wrapper.id = 'content-btn-compania';
-    wrapper.appendChild(setOptions1());
-    wrapper.appendChild(setOptions2());
-    wrapper.appendChild(setOptions3());
+    wrapper.appendChild(setOptions('Datos generales',setForm1));
+    wrapper.appendChild(setOptions('Bancos',setForm2));
+    wrapper.appendChild(setOptions('Terceros',setForm3));
     return wrapper;
 };
 
 
-const setOptions1 = () => {
+const setOptions = (placeholder,ev) => {
     const el = document.createElement('button');
     el.classList = 'btn__compania';
-    el.innerText = 'Datos Generales';
-    el.addEventListener('click', setForm1);
-    return el;
-};
-
-const setOptions2 = () => {
-    const el = document.createElement('button');
-    el.classList = 'btn__compania';
-    el.innerText = 'Bancos';
-    el.addEventListener('click', setForm2);
-    return el;
-};
-
-
-const setOptions3 = () => {
-    const el = document.createElement('button');
-    el.classList = 'btn__compania';
-    el.innerText = 'Terceros';
-    el.addEventListener('click', setForm3);
+    el.innerText = placeholder;
+    el.addEventListener('click', ev);
     return el;
 };
 
@@ -92,7 +75,7 @@ const createForm1 = () => {
     const wrapper = document.createElement('div');
     wrapper.id = 'wrapper-formulario-datos';
     wrapper.classList = 'wrapper__formulario-datos';
-    wrapper.appendChild(contentForm1());
+    wrapper.appendChild(contentForm());
     return wrapper;
 };
 
@@ -101,7 +84,6 @@ const createForm2 = () => {
     const form = document.createElement('div');
     form.id = 'formulario-bancos';
     createBancos(form);
-
     return form;
 };
 
@@ -110,12 +92,11 @@ const createForm3 = () => {
     const form = document.createElement('div');
     form.id = 'formulario-terceros';    
     createTerceros(form);
-
     return form;
 };
 
 
-const contentForm1 = () => {
+const contentForm = () => {
     const form = document.createElement('form');
     form.classList = 'form__data';
     addOptionsForm(form);
@@ -124,25 +105,14 @@ const contentForm1 = () => {
 
 
 const addOptionsForm = (form) => {
-    form.appendChild(sendForm());
     form.appendChild(contentInput1());
-    form.appendChild(contentInput2());
+    form.appendChild(contentInput2('Nombre completo o Razon social','text'));
+    form.appendChild(contentInput2('Nombre comercial','text'));
     form.appendChild(contentInput3());
+    form.appendChild(contentInput2('Dirección','text'));
+    form.appendChild(contentInput2('Correo Electronico','email'));
     form.appendChild(contentInput4());
     form.appendChild(contentInput5());
-    form.appendChild(contentInput6());
-    form.appendChild(contentInput7());
-    form.appendChild(contentInput8());
-};
-
-
-const sendForm = () => {
-    const el = document.createElement('button');
-    el.id = 'send-form-data';
-    el.classList = 'send__form-data';
-    el.type = 'submit';
-    el.innerText = 'Guardar';
-    return el;
 };
 
 
@@ -151,29 +121,32 @@ const contentInput1 = () => {
     wrapper.id = 'wrapper-inputs';
     wrapper.classList = 'wrapper__inputs';
     wrapper.appendChild(setInputData1());
-    wrapper.appendChild(setInputData2());
-    wrapper.appendChild(setInputData3());
+    wrapper.appendChild(setInputData2('Nit'));
+    wrapper.appendChild(setInputData2('Dv'));
     return wrapper;
 };
 
 
-const contentInput2 = () => {
+const contentInput2 = (placeholder,tp) => {
     const el = document.createElement('input');
     el.id = 'data-input';
     el.classList = 'data__input input';
-    el.type = 'text';
-    el.placeholder = 'Nombre completo o Razon social';
+    el.type = tp;
+    el.placeholder = placeholder;
     return el;
 };
 
 
 const contentInput3 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input input';
-    el.type = 'text';
-    el.placeholder = 'Nombre comercial';
-    return el;
+    const wrapper = document.createElement('div');
+    wrapper.id = 'wrapper-inputs';
+    wrapper.classList = 'wrapper__inputs';
+    wrapper.appendChild(setInputData2('Sigla'));
+    wrapper.appendChild(setInputData4());
+    wrapper.appendChild(setInputData5());
+    wrapper.appendChild(setInputData6());
+    wrapper.appendChild(setInputData2('Tel/cel'));
+    return wrapper;
 };
 
 
@@ -181,55 +154,22 @@ const contentInput4 = () => {
     const wrapper = document.createElement('div');
     wrapper.id = 'wrapper-inputs';
     wrapper.classList = 'wrapper__inputs';
-    wrapper.appendChild(setInputData4());
-    wrapper.appendChild(setInputData5());
-    wrapper.appendChild(setInputData6());
+    wrapper.appendChild(setInputData2('Pagina web'));
+    wrapper.appendChild(setInputData3('Cargue su logo'));
     wrapper.appendChild(setInputData7());
-    wrapper.appendChild(setInputData8());
     return wrapper;
 };
 
 
 const contentInput5 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input input';
-    el.type = 'text';
-    el.placeholder = 'Dirección';
-    return el;
-};
-
-
-const contentInput6 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input input';
-    el.type = 'email';
-    el.placeholder = 'Correo Electronico';
-    return el;
-};
-
-
-const contentInput7 = () => {
     const wrapper = document.createElement('div');
     wrapper.id = 'wrapper-inputs';
     wrapper.classList = 'wrapper__inputs';
-    wrapper.appendChild(setInputData9());
-    wrapper.appendChild(setInputData10());
-    wrapper.appendChild(setInputData11());
-    return wrapper;
-};
-
-
-const contentInput8 = () => {
-    const wrapper = document.createElement('div');
-    wrapper.id = 'wrapper-inputs';
-    wrapper.classList = 'wrapper__inputs';
-    wrapper.appendChild(setInputData12());
-    wrapper.appendChild(setInputData13());
-    wrapper.appendChild(setInputData14());
-    wrapper.appendChild(setInputData15());
-    wrapper.appendChild(setInputData16());
+    wrapper.appendChild(setInputData3('Redes sociales'));
+    wrapper.appendChild(setInputData2('Instagram'));
+    wrapper.appendChild(setInputData2('Facebook'));
+    wrapper.appendChild(setInputData2('Tik tok'));
+    wrapper.appendChild(setInputData2('Wasa wasa'));
     return wrapper;
 };
 
@@ -238,39 +178,37 @@ const setInputData1 = () => {
     const el = document.createElement('select');
     el.id = 'data-select';
     el.classList = 'data__select';
-    el.appendChild(addOptionsDefault());
-    el.appendChild(addOptions1());
-    el.appendChild(addOptions2());
+    el.appendChild(addOptionsDefault('Tipo de documento'));
+    el.appendChild(addOptions('Cedula ciudadania','1'));
+    el.appendChild(addOptions('Cedula extramjero','2'));
     return el;
 };
 
 
-const setInputData2 = () => {
+const setInputData2 = (placeholder) => {
     const el = document.createElement('input');
     el.id = 'data-input';
     el.classList = 'data__input';
     el.type = 'text';
-    el.placeholder = 'Nit';
+    el.placeholder = placeholder;
     return el;
 };
 
 
-const setInputData3 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Dv';
+const setInputData3 = (placeholder) => {
+    const el = document.createElement('span');
+    el.id = 'data-text';
+    el.classList = 'data__text';
+    el.innerText = placeholder;
     return el;
 };
 
 
 const setInputData4 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Sigla';
+    const el = document.createElement('select');
+    el.id = 'data-select';
+    el.classList = 'data__select';
+    el.appendChild(addOptionsDefault('Pais'));
     return el;
 };
 
@@ -279,7 +217,7 @@ const setInputData5 = () => {
     const el = document.createElement('select');
     el.id = 'data-select';
     el.classList = 'data__select';
-    el.appendChild(addOptionsDefault2());
+    el.appendChild(addOptionsDefault('Departamento'));
     return el;
 };
 
@@ -288,50 +226,13 @@ const setInputData6 = () => {
     const el = document.createElement('select');
     el.id = 'data-select';
     el.classList = 'data__select';
-    el.appendChild(addOptionsDefault3());
+    el.appendChild(addOptionsDefault('Municipio'));
     return el;
 };
+
 
 
 const setInputData7 = () => {
-    const el = document.createElement('select');
-    el.id = 'data-select';
-    el.classList = 'data__select';
-    el.appendChild(addOptionsDefault4());
-    return el;
-};
-
-
-const setInputData8 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Tel/cel';
-    return el;
-};
-
-
-const setInputData9 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Pagina Web';
-    return el;
-};
-
-
-const setInputData10 = () => {
-    const el = document.createElement('span');
-    el.id = 'data-text';
-    el.classList = 'data__text';
-    el.innerText = 'Cargue su logo';
-    return el;
-};
-
-
-const setInputData11 = () => {
     const el = document.createElement('input');
     el.id = 'data-file';
     el.classList = 'data__file';
@@ -340,101 +241,19 @@ const setInputData11 = () => {
 };
 
 
-const setInputData12 = () => {
-    const el = document.createElement('span');
-    el.id = 'data-text';
-    el.classList = 'data__text';
-    el.innerText = 'Redes sociales';
-    return el;
-};
-
-
-const setInputData13 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Instagram';
-    return el;
-};
-
-
-const setInputData14 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Facebook';
-    return el;
-};
-
-
-const setInputData15 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Tik Tok';
-    return el;
-};
-
-
-const setInputData16 = () => {
-    const el = document.createElement('input');
-    el.id = 'data-input';
-    el.classList = 'data__input';
-    el.type = 'text';
-    el.placeholder = 'Wasa wasa';
-    return el;
-};
-
-
-const addOptionsDefault = () => {
+const addOptionsDefault = (placeholder) => {
     const contentOptionDefault = document.createElement("option");
     contentOptionDefault.setAttribute("selected",'selected');
-    contentOptionDefault.innerHTML = `Tipo de Documento`;
+    contentOptionDefault.innerHTML = placeholder;
     return contentOptionDefault;
 };
 
 
-const addOptionsDefault2 = () => {
-    const contentOptionDefault = document.createElement("option");
-    contentOptionDefault.setAttribute("selected",'selected');
-    contentOptionDefault.innerHTML = `Pais`;
-    return contentOptionDefault;
-};
-
-
-const addOptionsDefault3 = () => {
-    const contentOptionDefault = document.createElement("option");
-    contentOptionDefault.setAttribute("selected",'selected');
-    contentOptionDefault.innerHTML = `Departamento`;
-    return contentOptionDefault;
-};
-
-
-const addOptionsDefault4 = () => {
-    const contentOptionDefault = document.createElement("option");
-    contentOptionDefault.setAttribute("selected",'selected');
-    contentOptionDefault.innerHTML = `Municipio`;
-    return contentOptionDefault;
-};
-
-
-const addOptions1 = () => {
+const addOptions = (placeholder,value) => {
     const contentOption1 = document.createElement("option");
-    contentOption1.innerHTML = `Cedula ciudadania`;
-    contentOption1.setAttribute("value",'1');
+    contentOption1.innerHTML = placeholder;
+    contentOption1.setAttribute("value",value);
     return contentOption1;
 };
-
-
-const addOptions2 = () => {
-    const contentOption1 = document.createElement("option");
-    contentOption1.innerHTML = `Cedula extrajero`;
-    contentOption1.setAttribute("value",'2');
-    return contentOption1;
-};
-
 
 export{createCompania};
