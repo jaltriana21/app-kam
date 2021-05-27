@@ -36,7 +36,6 @@ img{
 }
 
 
-
 /*---show section---*/
 .wrapper__nav{
     display: none;
@@ -44,16 +43,14 @@ img{
 
 
 .activo{
-    max-width: 1024px;
-    display: grid;
-    grid-template-columns: 100%;
-    width: 100%;
+    display: flex;
 }
 
 
 /*----container---*/
 .container{
-    height: 600px;
+    height: 100vh;
+    width: 100%;
 }
 
 
@@ -61,7 +58,9 @@ img{
     display: flex;
     align-items: center;
     text-align: center;
+    margin: 0 auto;
     height: 100%;
+    width: 100%;
 }
 
 
@@ -82,6 +81,8 @@ img{
     align-items: center;
     padding-right: 1rem;
     border-right: 2px solid #F77F00;
+    height: 100%;
+    min-height: 350px;
 }
 
 
@@ -93,6 +94,10 @@ img{
     display: flex;
     text-align: center;
     align-items: center;
+}
+
+.nav__menu{
+    height: 100%;
 }
 
 
@@ -114,30 +119,53 @@ img{
 }
 
 
-
-
 /*----compania---*/
+.wrapper__main{
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper__compania{
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    min-width: 500px;
+}
+
+.wrapper__Sections{
+    width: 100%;
+    margin: 0 auto; 
+}
+
+
 .wrapper__options-compania{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,50%);
+    column-gap: 1rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 
 .content__btn__compania{
     display: flex;
+    padding-right: 5rem;
     flex-direction: column;
-    margin: 0 auto;
     border-right: 3px solid #104F55;
+    width: 80%;
+    align-items: center;
+    height: auto;
 }
 
 .btn__compania{
     background: none;
     border: 1px solid #F77F00;
-    margin: 3rem 0;
-    margin-right: 3rem;
+    margin: 3rem auto;
     padding: 1rem 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;
+    width: 100%;
 }
 
 .btn__compania:hover{
@@ -150,40 +178,28 @@ img{
     margin: 10px;
 }
 
-#tercero-create{       
+.btn-compania{       
     background-color: #F77F00;    
     color: #fff;    
-    cursor: pointer;        
+    cursor: pointer;      
     border: 1px solid #F77F00;
     padding: 1rem 1rem;      
     font-size:medium;
     font-family: Georgia, 'Times New Roman', Times, serif;   
 }
 
-.tercero-table{
+.compania-table{
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     border: 1px solid #828c51;       
     color: #828c51; 
-    margin: 10px;
+    margin: 20px;
 }
 
 th{
     border: 1px solid #828c51; 
-}
-
-#tercero-save{
-    display: inline;
-    background-color: #F77F00;    
-    color: #fff;    
-    cursor: pointer;        
-    border: 1px solid #F77F00;
-    padding: 1rem 1rem; 
-    margin: 10px;     
-    font-size:medium;
-    font-family: Georgia, 'Times New Roman', Times, serif;   
 }
 
 .tercero-input{
@@ -214,11 +230,90 @@ th{
 }
 
 #tercero-sigla{
-    width:120px;
+    width:50px;
 }
 
+#tercero-tel{
+    width:80px;
+}
 .tercero-hr{
     width:100%;
     background-color: #104F55;
     height:4px;
+}
+
+#banco-cuenta{
+    width:140px;
+}
+
+#banco-saldo{
+    width:140px;
+}
+
+
+/*---formulario datos--*/
+.wrapper__formulario-datos{
+    position: relative;
+}
+
+
+.form__data{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5rem;
+    font-family: 'Tahoma', serif;
+}
+
+
+.send__form-data{
+    width: 30%;
+    background-color: #F77F00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 3rem;
+    right: 0;
+    font-family: 'Tahoma', serif;
+}
+
+.data__input{
+    border: none;
+    background-color: none;
+    border: 1px solid #828c51;
+    text-decoration: none;
+    width: 80px;
+    margin: 7px 5px;
+}
+
+
+.data__input::placeholder{
+    color:#828c51;
+    font-family: 'Tahoma', serif;
+}
+
+.data__input:focus{
+    outline: none;
+}
+
+.data__select{
+    color: #828c51;
+    border: 1px solid #828c51;
+    margin: 7px 5px;
+    font-family: 'Tahoma', serif;
+}
+
+.data__text{
+    font-size: 0.8rem;
+}
+
+
+.data__file{
+    margin-left: 3px;
+}
+
+
+.input{
+    width: 90%;
 }

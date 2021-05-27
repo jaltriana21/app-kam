@@ -54,6 +54,7 @@ const divPlace = () =>{
     div.appendChild((createSelect('tercero-pais',createOptions('Pais'))));
     div.appendChild((createSelect('tercero-departamento',createOptions('departamento'))));
     div.appendChild((createSelect('tercero-ciudad',createOptions('ciudad'))));
+    div.appendChild(createInput('tel','tercero-tel','Telefono'));
 
     return div
 };
@@ -105,7 +106,7 @@ const createLine = () =>{
 
 const createTable = () => {
     const table = document.createElement('table');   
-    table.classList = 'tercero-table';
+    table.classList = 'compania-table';
     table.appendChild(createTableHead());
 
     return table;
@@ -132,6 +133,7 @@ const createButton = () => {
     const btn = document.createElement('button');
     btn.id = 'tercero-create';   
     btn.innerText = 'Crear Tercero +';
+    btn.classList = 'btn-compania';  
     btn.addEventListener('click',showElements);
     
     return btn;
@@ -141,6 +143,7 @@ const createSaveButton =() =>{
     const btn = document.createElement('button');
     btn.id = 'tercero-save';   
     btn.innerText = 'Guardar';
+    btn.classList = 'btn-compania';  
     btn.addEventListener('click',hideElements);
     return btn;
 
