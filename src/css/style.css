@@ -12,6 +12,7 @@ h1,h2,h3,p{
     margin: 0;
 }
 
+
 ul{
     margin: 0;
     padding: 0;
@@ -29,6 +30,7 @@ li{
     list-style: none;
 }
 
+
 img{
     max-width: 100%;
     height: auto;
@@ -43,6 +45,16 @@ img{
 
 
 .activo{
+    display: flex;
+}
+
+
+.homework__desactive{
+    display: none;
+}
+
+
+.homework__active{
     display: flex;
 }
 
@@ -117,6 +129,7 @@ img{
 .nav__link:hover{
     border-bottom: 3px solid #F77F00;
 }
+
 
 
 /*----compania---*/
@@ -266,8 +279,6 @@ th{
 }
 
 
-
-
 .data__input{
     border: none;
     background-color: none;
@@ -307,3 +318,147 @@ th{
 .input{
     width: 90%;
 }
+
+
+/*---Tareas---*/
+.wrapper__tareas{
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+
+.wrapper__header-tarea{
+    display: flex;
+    width: 90%;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.wrapper__add-tarea{
+    display: flex;
+    height: 80%;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #F77F00;
+    transition: 0.3s;
+}
+
+
+.wrapper__add-tarea > i{
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+.wrapper__add-tarea:hover{
+    box-shadow: 2px 2px #888888;
+}
+
+
+.btn__tarea-header,.calendar{
+    border: 1px solid #F77F00;
+    background-color: #fff;
+    padding: 1rem;
+    font-family: 'Tahoma', serif;
+    font-size: 1rem;
+    color: #104F55;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.btn__tarea-header:hover{
+    background-color: #F77F00;
+    color: #fff;
+}
+
+
+.btn__tarea-header:focus{
+    background-color: #F77F00;
+    color: #fff;
+}
+
+
+.calendar{
+    cursor: pointer;
+}
+
+.calendar:focus{
+    outline: none;
+    box-shadow: 2px 2px #888888;
+}
+
+
+
+.wrapper__new-tarea{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+
+.btn__new-tarea{
+    position: absolute;
+    background-color: #F77F00;
+    color: #fff;
+    top: 0;
+    right: 2rem;
+    font-family: 'Tahoma', serif;
+    font-size: 1rem;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.title__new-tarea{
+    background-color: #fff;
+    border: none;
+    width: 10%;
+    border-bottom: 2px solid #F77F00;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+
+.btn__new-tarea:hover{
+    box-shadow: 2px 2px #888888;
+}
+
+
+.wrapper__input-tarea{
+    display: flex;
+    width: 100%;
+    margin-top: 4rem;
+    justify-content: space-around;
+}
+
+
+.input__tarea{
+    border: 1px solid #F77F00;
+    background-color: #fff;
+    font-family: 'Tahoma', serif;
+    font-size: 1rem;
+    color: #104F55;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 1.2rem;
+}
+
+
+.input__tarea:focus{
+    outline: none;
+    box-shadow: 2px 2px #888888;
+}
+

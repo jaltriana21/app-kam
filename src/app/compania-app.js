@@ -70,7 +70,6 @@ const setForm3 = () => {
 };
 
 
-
 const createForm1 = () => {
     const wrapper = document.createElement('div');
     wrapper.id = 'wrapper-formulario-datos';
@@ -229,7 +228,6 @@ const setInputData6 = () => {
     el.appendChild(addOptionsDefault('Municipio'));
     return el;
 };
-
 
 
 const setInputData7 = () => {
