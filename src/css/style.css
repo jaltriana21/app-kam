@@ -284,17 +284,7 @@ th{
 }
 
 
-.send__form-data{
-    width: 30%;
-    background-color: #F77F00;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 3rem;
-    right: 0;
-    font-family: 'Tahoma', serif;
-}
+
 
 .data__input{
     border: none;

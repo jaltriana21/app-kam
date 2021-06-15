@@ -74,13 +74,13 @@ const list = ()=>{
 
 const addItems = (navList) => {
     navList.appendChild(setItem1());
-    navList.appendChild(setItem2());
-    navList.appendChild(setItem3());
-    navList.appendChild(setItem4());
-    navList.appendChild(setItem5());
-    navList.appendChild(setItem6());
-    navList.appendChild(setItem7());
-    navList.appendChild(setItem8());
+    navList.appendChild(setItem2('Ingresos','ingresos'));
+    navList.appendChild(setItem2('Gastos','gastos'));
+    navList.appendChild(setItem2('Presupuesto','presupuesto'));
+    navList.appendChild(setItem2('Tarea','tareas'));
+    navList.appendChild(setItem2('Cuadre caja','cuadre'));
+    navList.appendChild(setItem2('Informes','informes'));
+    navList.appendChild(setItem2('Compañia','compania'));
 };
 
 
@@ -92,60 +92,13 @@ const setItem1 = ()=>{
 };
 
 
-const setItem2 = ()=>{
+const setItem2 = (placeholder,id)=>{
     const navItem = document.createElement('li');
     navItem.classList = 'nav__item';
-    navItem.appendChild(setLink2());
+    navItem.appendChild(setLink2(placeholder,id));
     return navItem;
 };
 
-
-const setItem3 = ()=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink3());
-    return navItem;
-};
-
-
-const setItem4 = ()=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink4());
-    return navItem;
-};
-
-
-const setItem5 = ()=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink5());
-    return navItem;
-};
-
-
-const setItem6 = ()=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink6());
-    return navItem;
-};
-
-
-const setItem7 = ()=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink7());
-    return navItem;
-};
-
-
-const setItem8 = ()=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink8());
-    return navItem;
-};
 
 
 const setLink1 = ()=>{
@@ -165,75 +118,15 @@ const setImgNav = () => {
 };
 
 
-const setLink2 = ()=>{
+const setLink2 = (placeholder,id)=>{
     const navLink = document.createElement('a');
     navLink.classList = 'nav__link';
-    navLink.id = 'ingresos';
-    navLink.innerText = 'Ingresos';
+    navLink.id = id;
+    navLink.innerText = placeholder;
     navLink.addEventListener('click', setSection);
     return navLink;
 }    
-
-
-const setLink3 = ()=>{
-    const navLink = document.createElement('a');
-    navLink.classList = 'nav__link';
-    navLink.id = 'gastos';
-    navLink.innerText = 'Gastos';
-    navLink.addEventListener('click', setSection);
-    return navLink;
-}  
-
-
-const setLink4 = ()=>{
-    const navLink = document.createElement('a');
-    navLink.classList = 'nav__link';
-    navLink.id = 'presupuesto';
-    navLink.innerText = 'Presupuesto';
-    navLink.addEventListener('click', setSection);
-    return navLink;
-}  
-
-
-const setLink5 = ()=>{
-    const navLink = document.createElement('a');
-    navLink.classList = 'nav__link';
-    navLink.id = 'tareas';
-    navLink.innerText = 'Tareas';
-    navLink.addEventListener('click', setSection);
-    return navLink;
-}  
  
-
-const setLink6 = ()=>{
-    const navLink = document.createElement('a');
-    navLink.classList = 'nav__link';
-    navLink.id = 'cuadre';
-    navLink.innerText = 'Cuadre de caja';
-    navLink.addEventListener('click', setSection);
-    return navLink;
-} 
-
-
-const setLink7 = ()=>{
-    const navLink = document.createElement('a');
-    navLink.classList = 'nav__link';
-    navLink.id = 'informes';
-    navLink.innerText = 'Informes';
-    navLink.addEventListener('click', setSection);
-    return navLink;
-} 
-
-
-const setLink8 = ()=>{
-    const navLink = document.createElement('a');
-    navLink.classList = 'nav__link';
-    navLink.id = 'compania';
-    navLink.innerText = 'Compañia';
-    navLink.addEventListener('click', setSection);
-    return navLink;
-} 
-
 
 const createMain = () => {
     const wrapper = document.createElement('div');
