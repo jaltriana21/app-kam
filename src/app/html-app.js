@@ -73,32 +73,23 @@ const list = ()=>{
 
 
 const addItems = (navList) => {
-    navList.appendChild(setItem1());
-    navList.appendChild(setItem2('Ingresos','ingresos'));
-    navList.appendChild(setItem2('Gastos','gastos'));
-    navList.appendChild(setItem2('Presupuesto','presupuesto'));
-    navList.appendChild(setItem2('Tarea','tareas'));
-    navList.appendChild(setItem2('Cuadre caja','cuadre'));
-    navList.appendChild(setItem2('Informes','informes'));
-    navList.appendChild(setItem2('Compañia','compania'));
+    navList.appendChild(setItem(setLink1()));
+    navList.appendChild(setItem(setLink2('Ingresos','ingresos')));
+    navList.appendChild(setItem(setLink2('Gastos','gastos')));
+    navList.appendChild(setItem(setLink2('Presupuesto','presupuesto')));
+    navList.appendChild(setItem(setLink2('Tarea','tareas')));
+    navList.appendChild(setItem(setLink2('Cuadre caja','cuadre')));
+    navList.appendChild(setItem(setLink2('Informes','informes')));
+    navList.appendChild(setItem(setLink2('Compañia','compania')));
 };
 
 
-const setItem1 = ()=>{
+const setItem = (fcn)=>{
     const navItem = document.createElement('li');
     navItem.classList = 'nav__item';
-    navItem.appendChild(setLink1());
+    navItem.appendChild(fcn);
     return navItem;
 };
-
-
-const setItem2 = (placeholder,id)=>{
-    const navItem = document.createElement('li');
-    navItem.classList = 'nav__item';
-    navItem.appendChild(setLink2(placeholder,id));
-    return navItem;
-};
-
 
 
 const setLink1 = ()=>{

@@ -12,6 +12,7 @@ h1,h2,h3,p{
     margin: 0;
 }
 
+
 ul{
     margin: 0;
     padding: 0;
@@ -29,6 +30,7 @@ li{
     list-style: none;
 }
 
+
 img{
     max-width: 100%;
     height: auto;
@@ -43,6 +45,16 @@ img{
 
 
 .activo{
+    display: flex;
+}
+
+
+.homework__desactive{
+    display: none;
+}
+
+
+.homework__active{
     display: flex;
 }
 
@@ -117,6 +129,7 @@ img{
 .nav__link:hover{
     border-bottom: 3px solid #F77F00;
 }
+
 
 
 /*----compania---*/
@@ -284,8 +297,6 @@ th{
 }
 
 
-
-
 .data__input{
     border: none;
     background-color: none;
@@ -399,3 +410,4 @@ th{
     margin: 0 0 0 auto;   
     cursor: pointer;   
 }
+
