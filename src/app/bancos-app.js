@@ -31,7 +31,7 @@ const createButton = (id,texto) => {
     const btn = document.createElement('button');
     btn.id = id;   
     btn.innerText = texto;  
-    btn.classList = 'btn-compania';  
+    btn.classList = 'btn-banco';  
     
     return btn;
 };
@@ -65,7 +65,7 @@ const createTableHead = () => {
     const tableHead = document.createElement('tr');    
     tableHead.appendChild(tableHeadElemets('Banco'));
     tableHead.appendChild(tableHeadElemets('# Cuenta'));
-    tableHead.appendChild(tableHeadElemets('Saldo iniical'));
+    tableHead.appendChild(tableHeadElemets('Saldo inical'));
 
     return tableHead;
 

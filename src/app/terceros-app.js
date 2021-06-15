@@ -1,9 +1,8 @@
 
 const createTerceros = (form) =>{    
 
-    form.appendChild(createButton());    
-    form.appendChild(createForm());
-    form.appendChild(createLine());
+    form.appendChild(createButton());      
+    form.appendChild(createForm());    
     form.appendChild(createTable());
     
     
@@ -21,17 +20,19 @@ const createForm = () =>{
 };
 
 const addFormElements = (form) =>{
-    form.appendChild(createSaveButton());    
+      
     form.appendChild(divDocument());   
     form.appendChild(divNombre());
     form.appendChild(divPlace());
     form.appendChild(divMail());
+    form.appendChild(createSaveButton());  
+    form.appendChild(createLine());
     
 };
 
 const divDocument = () =>{
     const div = document.createElement('div');
-    div.appendChild(createSelect('tercero-tipoDoc',createOptions('tipo de documento')));
+    div.appendChild(createSelect('tercero-tipoDoc',createOptions('Tipo de documento')));
     div.appendChild(createInput('text','tercero-nit','Nit'));
     div.appendChild(createInput('text','tercero-dv','Dv'));
 
@@ -52,8 +53,8 @@ const divPlace = () =>{
     const div = document.createElement('div');
     div.appendChild(createInput('text','tercero-sigla','Sigla'));
     div.appendChild((createSelect('tercero-pais',createOptions('Pais'))));
-    div.appendChild((createSelect('tercero-departamento',createOptions('departamento'))));
-    div.appendChild((createSelect('tercero-ciudad',createOptions('ciudad'))));
+    div.appendChild((createSelect('tercero-departamento',createOptions('Departamento'))));
+    div.appendChild((createSelect('tercero-ciudad',createOptions('Ciudad'))));
     div.appendChild(createInput('tel','tercero-tel','Telefono'));
 
     return div
@@ -134,7 +135,7 @@ const createButton = () => {
     btn.id = 'tercero-create';   
     btn.innerText = 'Crear Tercero +';
     btn.classList = 'btn-compania';  
-    btn.addEventListener('click',showElements);
+    btn.addEventListener('click',showForm);
     
     return btn;
 };
@@ -144,19 +145,19 @@ const createSaveButton =() =>{
     btn.id = 'tercero-save';   
     btn.innerText = 'Guardar';
     btn.classList = 'btn-compania';  
-    btn.addEventListener('click',hideElements);
+    btn.addEventListener('click',hideForm);
     return btn;
 
 };
 
-const showElements = () =>{
+const showForm = () =>{
     const form = document.getElementById('form-tercero');
     form.hidden = false;
     const btn =  document.getElementById('tercero-create');
     btn.hidden = true;
 };
 
-const hideElements = () =>{
+const hideForm = () =>{
     const form = document.getElementById('form-tercero');
     form.hidden = true;
     const btn =  document.getElementById('tercero-create');
