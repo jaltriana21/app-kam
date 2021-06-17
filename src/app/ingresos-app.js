@@ -19,57 +19,88 @@ const contentOption = () => {
     wrapper.id = 'content-btn-ingreso';
     wrapper.appendChild(setOptions('btn_ingreso_item','Crear Item',setFormItem));
     wrapper.appendChild(setOptions('btn_ingreso_categoria','Crear Categoria',setFormCategoria));
-    wrapper.appendChild(setOptions('btn_ingreso_registro','Registrar un Ingreso',setFormRegistro));
+    wrapper.appendChild(addDivRegistro());    
+    return wrapper;
+};
+
+const addDivRegistro = () => {
+    const wrapper = document.createElement('div');
+    wrapper.id = 'register-spend';
+    wrapper.classList = 'registro__ingreso';
+    wrapper.appendChild(addBtnRegistro('btn-spend' , 'btn__ingreso'));
     return wrapper;
 };
 
 
-const setOptions = (id,text,ev) => {
-    const el = document.createElement('button');
-    el.id = id;
-    el.classList = 'btn-ingreso';
-    el.innerText = text;
-    el.addEventListener('click', ev);
+const addBtnRegistro = (id, clase) => {
+    const btn = document.createElement('button');
+    btn.id = id;
+    btn.classList = clase;
+    btn.appendChild(addText('title-registro-ingreso', 'title__registro-ingreso', 'Registre un Ingreso'));
+    btn.appendChild(addIcon('bx bx-add-to-queue'));
+    btn.addEventListener('click', setFormRegistro)
+    return btn;
+};
+
+
+const addText = (id, clase, text) => {
+    const span = document.createElement('span');
+    span.id = id;
+    span.classList = clase;
+    span.innerText = text;
+
+    return span;
+};
+
+
+const addIcon = (clase) => {
+    const el = document.createElement('i');
+    el.classList = clase;
+
     return el;
 };
 
 
+const setOptions = (id,text,ev) => {
+    const btn = document.createElement('button');
+    btn.id = id;
+    btn.classList = 'btn-ingreso';
+    btn.innerText = text;
+    btn.addEventListener('click', ev);
+    return btn;
+};
+
+
+
 const setFormItem = () => {
-    const wrapper = document.getElementById('wrapper-options-ingreso');
-    const registro = document.getElementById('formulario-registro');
-    const categoria = document.getElementById('formulario-categoria');
-    const item = document.getElementById('formulario-item');
-    if(registro)wrapper.removeChild(registro);
-    if(categoria)wrapper.removeChild(categoria);
-    if(!item)wrapper.appendChild(createDivItem());
+    const wrapper = document.getElementById('wrapper-ingresos');
+    const content = document.getElementById('wrapper-options-ingreso');
+    wrapper.removeChild(content);
+    wrapper.appendChild(createDivItem());
+    
 };
 
 
 const setFormCategoria = () => {
-    const wrapper = document.getElementById('wrapper-options-ingreso');
-    const registro = document.getElementById('formulario-registro');
-    const item = document.getElementById('formulario-item');
-    const categoria = document.getElementById('formulario-categoria');
-    if(registro)wrapper.removeChild(registro);
-    if(item)wrapper.removeChild(item);
-    if(!categoria)wrapper.appendChild(createDivCategoria());
+    const wrapper = document.getElementById('wrapper-ingresos');
+    const content = document.getElementById('wrapper-options-ingreso');
+    wrapper.removeChild(content);
+    wrapper.appendChild(createDivCategoria());
 };
 
 
 const setFormRegistro = () => {
-    const wrapper = document.getElementById('wrapper-options-ingreso');
-    const categoria = document.getElementById('formulario-categoria');
-    const item = document.getElementById('formulario-item');
-    const registro = document.getElementById('formulario-registro');
-    if(categoria)wrapper.removeChild(categoria);
-    if(item)wrapper.removeChild(item);
-    if(!registro)wrapper.appendChild(createDivRegistro());
+    const wrapper = document.getElementById('wrapper-ingresos');
+    const content = document.getElementById('wrapper-options-ingreso');
+    wrapper.removeChild(content);
+    wrapper.appendChild(createDivRegistro());
 };
 
 
 const createDivRegistro = () => {
     const wrapper = document.createElement('div');
-    wrapper.id = 'formulario-registro';        
+    wrapper.id = 'formulario-ingreso';
+    wrapper.classList = 'formulario__ingreso';        
     wrapper.appendChild(createFormReistro());
     
     return wrapper;
@@ -78,7 +109,8 @@ const createDivRegistro = () => {
 
 const createDivItem = () => {
     const wrapper = document.createElement('div');
-    wrapper.id = 'formulario-item';     
+    wrapper.id = 'formulario-ingreso';
+    wrapper.classList = 'formulario__ingreso';     
     wrapper.appendChild(createFormItem());
 
     return wrapper;
@@ -87,7 +119,8 @@ const createDivItem = () => {
 
 const createDivCategoria = () => {
     const wrapper = document.createElement('div');
-    wrapper.id = 'formulario-categoria';   
+    wrapper.id = 'formulario-ingreso';
+    wrapper.classList = 'formulario__ingreso';    
     wrapper.appendChild(createFormCategoria());    
     
     return wrapper;
@@ -114,6 +147,16 @@ const createSubmit = (id,text) => {
     return btn;
 };
 
+const createBtnGoBack = () =>{
+    const btn = document.createElement('button');
+    btn.type = 'button';    
+    btn.innerHTML = 'Atras';   
+    btn.classList = 'ingresos-btninput'; 
+    btn.addEventListener('click',showMainMenu)
+    
+    return btn;
+}
+
 const createSelect = (id,options) => {
     const select = document.createElement('select');
     select.id = id;
@@ -132,11 +175,21 @@ const createOptionDefault = (value) => {
     return options;
 };
 
+const createTitleH3 = (text) =>{
+    const h3 = document.createElement('h3');
+    h3.classList = 'ingreso-registro-title'
+    h3.innerHTML = text;
+
+    return h3;
+}
+
 const createFormItem = () =>{
     const form = document.createElement('form');
     form.id = 'item-form';
-    form.appendChild(createSubmit('btn-ingreso-item','Guardar'));
+    form.appendChild(createTitleH3('CREAR ITEM'));          
+    form.appendChild(createBtnGoBack());
     form.appendChild(createformItemElements());
+    form.appendChild(createSubmit('btn-ingreso-item','Guardar'));
 
     return form;
 
@@ -157,15 +210,16 @@ const createformItemElements = () =>{
 const createFormCategoria = () =>{
     const form = document.createElement('form');
     form.id = 'item-form';
-    form.appendChild(createSubmit('btn-ingreso-cateoria','Guardar'));
+    form.appendChild(createTitleH3('CREAR CATEGORIA'));  
+    form.appendChild(createBtnGoBack());   
     form.appendChild(createformCategoriaElements());
-
+    form.appendChild(createSubmit('btn-ingreso-cateoria','Guardar'));
     return form;
 };
 
 const createformCategoriaElements = () =>{
     const divForm =  document.createElement('div');
-    divForm.classList = 'tareas-form-elements';
+    divForm.classList = 'registro-form-elements';
     divForm.appendChild(createInput('name-categoria','Categoria'));   
     divForm.appendChild(createInput('description-categoria','Descripcion de la Categoria'));   
     divForm.appendChild(createInput('color-categoria','Color'));
@@ -176,9 +230,11 @@ const createformCategoriaElements = () =>{
 const createFormReistro = () =>{
     const form = document.createElement('form');
     form.id = 'registro-form';
-    form.appendChild(createSubmit('btn-ingreso-registro','Registrar'));
+    form.appendChild(createTitleH3('REGISTRAR INGRESO'));  
+    form.appendChild(createBtnGoBack());    
     form.appendChild(createformRegistroElements());
     form.appendChild(createformRegistroElements2());
+    form.appendChild(createSubmit('btn-ingreso-registro','Registrar'));
 
     return form;
 };
@@ -203,6 +259,13 @@ const createformRegistroElements2 = () =>{
     divForm.appendChild(createInput('monto-registro','Monto'));           
 
     return divForm;
+};
+
+const showMainMenu = () => {
+    const wrapper = document.getElementById('wrapper-ingresos');
+    const content = document.getElementById('formulario-ingreso');
+    wrapper.removeChild(content);
+    wrapper.appendChild(setContentOption());
 };
 
 export{createIngresos};
