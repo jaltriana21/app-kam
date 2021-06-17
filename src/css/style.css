@@ -49,16 +49,6 @@ img{
 }
 
 
-.homework__desactive{
-    display: none;
-}
-
-
-.homework__active{
-    display: flex;
-}
-
-
 /*----container---*/
 .container{
     height: 100vh;
@@ -82,7 +72,6 @@ img{
     text-align: center;
     height: 100%;
 }
-
 
 
 /*----navegation---*/
@@ -170,6 +159,7 @@ img{
     align-items: center;
     height: auto;
 }
+
 
 .btn__compania{
     background: none;
@@ -532,3 +522,197 @@ th{
 #registro-item,#categoria-registro, #unidades-registro, #monto-registro{
     width: 120px;
 }
+
+
+
+/*----gastos----*/
+.wrapper__gastos{
+    width: 100%;
+    position: relative;
+}
+
+
+.wrapper__added-spend, .wrapper__added-category{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+
+.wrapper__main-spend,.wrapper__added-register, .register{
+    width: 100%;
+}
+
+
+.wrapper__content-spend{
+    display: flex;
+    width: 98%;
+    margin: 3rem auto;
+}
+
+
+.wrapper__header-spend,.wrapper__header-register, .wrapper__header-category{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.wrapper__main-spend,.wrapper__main-category, .wrapper__inputs-register1, .wrapper__inputs-register2{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.add__input-spend{
+    background-color: #FFF;
+    outline: none;
+    border: 1px solid #F77F00;
+    padding: 1rem;
+}
+
+
+.add__input-spend::placeholder{
+    color: #828c51;
+    font-family: Tahoma, serif;
+}
+
+
+.add__spend{
+    background-color: #fff;
+    border: 1px solid #F77F00;
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    color: #104F55;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.add__spend:hover{
+    background-color: #F77F00;
+    color: #fff;
+}
+
+
+.content__add-btn{
+    width: 100%;
+    text-align: left;
+}
+
+
+#add-new-spend, #add-new-category{
+    background-color: #FFF;
+    border: none;
+    color: #F77F00;
+    font-size: large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+#add-new-spend:hover, #add-new-category:hover{
+    border-bottom: 2px solid #F77F00;
+}
+
+
+#add-save-spend, #add-save-category{
+    background-color: #F77F00;
+    border: none;
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    color: #FFF;
+    font-family: Tahoma, serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.btn__spend{
+    display: flex;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #F77F00;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+
+.title__register-spend{
+    margin-top: 4rem;
+    font-size: 1rem;
+}
+
+.bx{
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+
+.register__spend{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+.btn__spend-register{
+    display: flex;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #F77F00;
+    border: none;
+    color: #fff;
+    margin-right: 2rem;
+    margin-top: 2rem;
+}
+
+
+.title__register{
+    font-size: 1rem;
+}
+
+
+.add__register-new{
+    background-color: #F77F00;
+    border: none;
+    margin: 0 1rem;
+    margin-top: 8rem;
+    padding: 1rem 2rem;
+    color: #FFF;
+    font-family: Tahoma, serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.category__select{
+    border: 1px solid #F77F00;
+    padding: 0.9rem;
+    color: #828c51;
+    font-family: Tahoma, serif;
+    width: 20%;
+}
+
+
+
+
+

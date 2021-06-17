@@ -3,6 +3,7 @@ import {createTareas} from './tareas-app';
 import { createIngresos } from './ingresos-app';
 import main from '../html/html-main.html';
 import navegation from '../html/html-nav.html';
+import { createSpend } from './gastos-app';
 
 
 const init = (container) => {
@@ -30,6 +31,7 @@ const showSections = () => {
     createCompania();
     createTareas();
     createIngresos();
+    createSpend();
 };
 
 
