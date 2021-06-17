@@ -1,5 +1,6 @@
 import {createCompania} from './compania-app';
 import {createTareas} from './tareas-app';
+import { createIngresos } from './ingresos-app';
 import main from '../html/html-main.html';
 import navegation from '../html/html-nav.html';
 
@@ -28,6 +29,7 @@ const createLayout = () => {
 const showSections = () => {
     createCompania();
     createTareas();
+    createIngresos();
 };
 
 
