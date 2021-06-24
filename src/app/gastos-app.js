@@ -21,7 +21,7 @@ const addBtn = (id, clase, text, ev) => {
     el.id = id;
     el.classList = clase;
     el.innerText = text;
-    el.addEventListener('click', ev)
+    el.addEventListener('click', ev);
     return el;
 };
 

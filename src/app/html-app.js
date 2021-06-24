@@ -4,6 +4,7 @@ import { createIngresos } from './ingresos-app';
 import main from '../html/html-main.html';
 import navegation from '../html/html-nav.html';
 import { createSpend } from './gastos-app';
+import { createBudget } from './presupuesto-app';
 
 
 const init = (container) => {
@@ -32,6 +33,7 @@ const showSections = () => {
     createTareas();
     createIngresos();
     createSpend();
+    createBudget();
 };
 
 
